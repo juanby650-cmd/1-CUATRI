@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Álgebra · Apuntes de repaso de los temas 1, 2 y 3</title>
+<script>window.MathJax={tex:{inlineMath:[['$','$']],displayMath:[['$$','$$']]},svg:{fontCache:'global'}};</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-svg.js"></script>
+<style>
+:root{--bg:#f6f7fb;--card:#fff;--ink:#1a2233;--mute:#5a6479;--line:#dde1ec;--c1:#2b55d6;--s1:#e8eefc;--c2:#0b8576;--s2:#e1f4f1;--c3:#7338c9;--s3:#efe7fb;--warn:#a85a00;--warns:#fff2dc}
+@media(prefers-color-scheme:dark){:root{--bg:#121722;--card:#1b2231;--ink:#e8ecf5;--mute:#9aa5bd;--line:#2c364b;--c1:#8aa8ff;--s1:#1f2a4a;--c2:#4fd3bf;--s2:#14332f;--c3:#c3a0ff;--s3:#2b2048;--warn:#ffc36b;--warns:#3a2c12}}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.6 Georgia,'Times New Roman',serif}h1,h2,h3,h4,nav,.lab,th{font-family:system-ui,sans-serif}nav{position:sticky;top:0;z-index:5;display:flex;gap:6px;overflow-x:auto;padding:10px 16px;background:var(--bg);border-bottom:1px solid var(--line)}nav a{flex:none;padding:6px 14px;border-radius:99px;font-size:15px;font-weight:700;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--card)}main{max-width:860px;margin:0 auto;padding:0 18px 60px}.hero{padding:44px 0 18px}.hero h1{font-size:clamp(34px,6vw,54px);line-height:1.05;margin:0 0 10px;font-weight:800;letter-spacing:-.02em}.hero p{margin:0;color:var(--mute);max-width:65ch}.tema{margin-top:44px;--c:var(--c1);--s:var(--s1)}.t2{--c:var(--c2);--s:var(--s2)}.t3{--c:var(--c3);--s:var(--s3)}.band{background:var(--s);border-left:8px solid var(--c);border-radius:14px;padding:18px 22px;margin-bottom:8px}.band h2{margin:0;font-size:clamp(24px,4vw,32px);font-weight:800;color:var(--c)}.band p{margin:4px 0 0;color:var(--mute)}h3{font-size:21px;margin:30px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--c);color:var(--ink)}h4{font-size:17px;margin:18px 0 6px;color:var(--c)}.box,.ex,.tip,.cols>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin:14px 0}.box{border-top:4px solid var(--c)}.tip{border-left:6px solid var(--warn);background:var(--warns);border-color:var(--warn)}.tip .lab{display:block;font-weight:800;color:var(--warn);margin-bottom:2px}.ex{border-left:6px solid var(--c)}.ex>.lab{font-weight:800;color:var(--c);margin-bottom:6px}.formula{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px 12px;margin:14px 0;overflow-x:auto;text-align:center}.ok{background:var(--s);border-radius:8px;padding:8px 14px;margin:10px 0;font-weight:600}.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.cols>div{margin:0}.cols b{display:block;font-family:system-ui,sans-serif;color:var(--c)}ol.steps{margin:6px 0;padding-left:0;list-style:none;counter-reset:s}ol.steps li{counter-increment:s;padding:6px 0 6px 38px;position:relative}ol.steps li::before{content:counter(s);position:absolute;left:0;top:7px;width:26px;height:26px;border-radius:50%;background:var(--c);color:#fff;font:700 14px/26px system-ui,sans-serif;text-align:center}ul{padding-left:22px}li{margin:3px 0}.wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;background:var(--card);font-size:16px}th,td{border:1px solid var(--line);padding:8px 12px;text-align:left}th{background:var(--s);color:var(--c)}mjx-container{color:inherit}.muted{color:var(--mute)}footer{color:var(--mute);font:14px/1.5 system-ui,sans-serif;border-top:1px solid var(--line);margin-top:40px;padding-top:18px}@media(max-width:520px){body{font-size:17px}.band{padding:14px 16px}}@media print{body{background:#fff;color:#111;font-size:11pt}nav{position:static;flex-wrap:wrap;border:0;padding:0 0 12px}.hero{padding:15px 0}.tema{break-before:page;margin-top:0}.tema:first-of-type{break-before:auto}.box,.ex,.tip,.formula,.cols>div{break-inside:avoid;box-shadow:none;background:#fff}a{color:inherit}footer{break-before:page}}
+</style>
+</head>
+<body>
+<nav><a href="#t1">Tema 1</a><a href="#t2">Tema 2</a><a href="#t3">Tema 3</a><a href="#resumen">Resumen</a></nav>
+<main>
+<header class="hero"><h1>Álgebra</h1><p>Apuntes de repaso de los tres primeros temas: números complejos y sistemas, espacios vectoriales y geometría euclídea, transformaciones lineales y diagonalización.</p></header>
+
+<section class="tema" id="t1">
+<div class="band"><h2>Tema 1 · Complejos y sistemas</h2><p>Representaciones, operaciones, clasificación de sistemas y métodos de resolución.</p></div>
+<h3>1. Números complejos</h3>
+<div class="box"><p>Un número complejo se escribe en forma binómica como $z=a+bi$, donde $a=\operatorname{Re}(z)$, $b=\operatorname{Im}(z)$ e $i^2=-1$. Su conjugado es $\bar z=a-bi$ y su módulo es $|z|=\sqrt{a^2+b^2}$.</p><p>En el plano complejo, $z$ corresponde al punto $(a,b)$. Si $r=|z|$ y $\theta$ es un argumento, la forma polar y la forma exponencial son $z=r(\cos\theta+i\sin\theta)=re^{i\theta}$.</p></div>
+<h4>Operaciones en forma binómica</h4>
+<div class="cols"><div><b>Suma y resta</b>Se agrupan partes reales e imaginarias: $(a+bi)\pm(c+di)=(a\pm c)+(b\pm d)i$.</div><div><b>Producto</b>Se desarrolla y se usa $i^2=-1$: $(a+bi)(c+di)=(ac-bd)+(ad+bc)i$.</div><div><b>División</b>Se multiplica arriba y abajo por el conjugado del denominador. Así el denominador queda real.</div></div>
+<div class="ex"><div class="lab">Ejemplo · División de complejos</div>Calcular $\dfrac{4+2i}{1-i}$. Multiplicamos por $\dfrac{1+i}{1+i}$:<div class="formula">$\displaystyle \frac{(4+2i)(1+i)}{(1-i)(1+i)}=\frac{2+6i}{2}=1+3i.$</div>Comprobación: $(1+3i)(1-i)=4+2i$.</div>
+<h4>Forma polar, Euler y De Moivre</h4>
+<p>Para pasar a polar: calcula $r=\sqrt{a^2+b^2}$ y determina $\theta$ teniendo en cuenta el cuadrante del punto $(a,b)$. La identidad de Euler es $e^{i\theta}=\cos\theta+i\sin\theta$.</p>
+<div class="formula">$\displaystyle (r(\cos\theta+i\sin\theta))^n=r^n(\cos(n\theta)+i\sin(n\theta)).$</div>
+<div class="ex"><div class="lab">Ejemplo · Potencia con De Moivre</div>Calcular $(1-i)^4$. Aquí $1-i=\sqrt2\,e^{-i\pi/4}$. Entonces<div class="formula">$\displaystyle (1-i)^4=(\sqrt2)^4e^{-i\pi}=4(-1)=-4.$</div></div>
+<p>Las raíces n-ésimas de $re^{i\theta}$ son $w_k=\sqrt[n]{r}\,e^{i(\theta+2k\pi)/n}$, para $k=0,1,\ldots,n-1$. Se obtienen $n$ raíces, separadas angularmente por $2\pi/n$.</p>
+<div class="ex"><div class="lab">Ejemplo · Raíces cúbicas de $8i$</div>$8i=8e^{i\pi/2}$. Por tanto, $w_k=2e^{i(\pi/6+2k\pi/3)}$. Las raíces son $\sqrt3+i$, $-\sqrt3+i$ y $-2i$.</div>
+
+<h3>2. Sistemas lineales</h3>
+<p>Un sistema de $m$ ecuaciones y $n$ incógnitas se expresa como $Ax=b$. La matriz ampliada $[A|b]$ incorpora la columna de términos independientes. Las operaciones elementales por filas no cambian el conjunto de soluciones.</p>
+<div class="wrap"><table><thead><tr><th>Tipo</th><th>Criterio de rangos</th><th>Soluciones</th></tr></thead><tbody><tr><td>SCD</td><td>$\operatorname{rg}(A)=\operatorname{rg}([A|b])=n$</td><td>Una</td></tr><tr><td>SCI</td><td>$\operatorname{rg}(A)=\operatorname{rg}([A|b])&lt;n$</td><td>Infinitas</td></tr><tr><td>SI</td><td>$\operatorname{rg}(A)&lt;\operatorname{rg}([A|b])$</td><td>Ninguna</td></tr></tbody></table></div>
+<h4>¿Qué método conviene?</h4><div class="cols"><div><b>Gauss</b>Sirve para resolver y clasificar; reduce $[A|b]$ a forma escalonada y permite detectar pivotes y variables libres.</div><div><b>Cramer</b>Para un sistema cuadrado con $\det(A)\ne0$: $x_j=\det(A_j)/\det(A)$, donde $A_j$ sustituye la columna $j$ por $b$.</div><div><b>Matriz inversa</b>Si $A$ es cuadrada e invertible, $x=A^{-1}b$. No se puede usar si $\det(A)=0$.</div></div>
+<div class="ex"><div class="lab">Ejemplo · Discusión según un parámetro</div>Considera $x+y+z=4$, $2x+2y+kz=8$, $x-y=0$. Al restar dos veces la primera ecuación de la segunda queda $(k-2)z=0$.<ol class="steps"><li>Si $k\ne2$, el determinante de la matriz de coeficientes es $2(k-2)\ne0$: el sistema tiene solución única.</li><li>Si $k=2$, la segunda ecuación es el doble de la primera. Con $x=y=t$, se obtiene $z=4-2t$: SCI, con soluciones $(t,t,4-2t)$.</li></ol></div>
+<div class="tip"><span class="lab">Ojo</span>Que $\det(A)=0$ solo descarta solución única en un sistema cuadrado. Según $b$, puede haber infinitas soluciones o ninguna; hace falta comparar rangos.</div>
+</section>
+
+<section class="tema t2" id="t2">
+<div class="band"><h2>Tema 2 · Espacios y geometría</h2><p>Combinaciones lineales, independencia, subespacios, bases, dimensión y producto escalar.</p></div>
+<h3>1. Combinaciones, generado y subespacios</h3>
+<p>Una combinación lineal de $v_1,\ldots,v_k$ es $\lambda_1v_1+\cdots+\lambda_kv_k$. El subespacio generado, $\langle v_1,\ldots,v_k\rangle$, contiene todas sus combinaciones lineales.</p>
+<div class="cols"><div><b>Independencia lineal</b>Los vectores son independientes si $\lambda_1v_1+\cdots+\lambda_kv_k=0$ solo tiene la solución $\lambda_1=\cdots=\lambda_k=0$.</div><div><b>Dependencia</b>Son dependientes si existe una relación igual a cero con algún coeficiente no nulo. En ese caso, al menos uno puede expresarse con los demás.</div><div><b>Subespacio</b>$W$ es subespacio si contiene $0$ y es cerrado bajo suma y producto por escalares. Basta comprobar que $u,v\in W$ y $\alpha,\beta\in\mathbb R$ implican $\alpha u+\beta v\in W$.</div></div>
+<h3>2. Bases y dimensión</h3><p>Una base de $W$ es un conjunto de vectores que genera $W$ y es linealmente independiente. La dimensión es el número de vectores de cualquier base de $W$.</p>
+<div class="ex"><div class="lab">Ejemplo · Base de un subespacio</div>Sea $W=\{(x,y,z)\in\mathbb R^3:z=x+y\}$. Tomamos $x=\alpha$, $y=\beta$:<div class="formula">$(x,y,z)=(\alpha,\beta,\alpha+\beta)=\alpha(1,0,1)+\beta(0,1,1).$</div>Por tanto, una base es $\{(1,0,1),(0,1,1)\}$ y $\dim W=2$.</div>
+<div class="tip"><span class="lab">Atajo útil</span>Si un subespacio de $\mathbb R^n$ está definido por $r$ ecuaciones lineales independientes y homogéneas, su dimensión es $n-r$.</div>
+<h3>3. Geometría euclídea</h3>
+<div class="box"><p>Para $u=(u_1,\ldots,u_n)$ y $v=(v_1,\ldots,v_n)$:</p><div class="formula">$u\cdot v=\sum_{j=1}^n u_jv_j,\qquad \|u\|=\sqrt{u\cdot u},\qquad d(u,v)=\|u-v\|.$</div><p>El ángulo $\alpha$ entre vectores no nulos cumple $\cos\alpha=\dfrac{u\cdot v}{\|u\|\|v\|}$. Son ortogonales si $u\cdot v=0$.</p></div>
+<div class="ex"><div class="lab">Ejemplo · Encontrar un parámetro para ortogonalidad</div>Sean $u=(1,k,2)$ y $v=(-1,2,3)$. Exigimos $u\cdot v=0$: $-1+2k+6=0$. Así, $k=-\tfrac52$.</div>
+<h4>Proyección de un vector sobre otro</h4><p>La proyección de $u$ sobre un vector no nulo $v$ es $\operatorname{proy}_v(u)=\dfrac{u\cdot v}{v\cdot v}v$. El vector diferencia $u-\operatorname{proy}_v(u)$ es ortogonal a $v$.</p>
+</section>
+
+<section class="tema t3" id="t3">
+<div class="band"><h2>Tema 3 · Transformaciones y diagonalización</h2><p>Matriz asociada, núcleo e imagen, rango-nulidad, autovalores y potencias de matrices.</p></div>
+<h3>1. Transformaciones lineales</h3><p>Una aplicación $T:V\to W$ es lineal cuando preserva sumas y productos por escalares: $T(u+v)=T(u)+T(v)$ y $T(\lambda u)=\lambda T(u)$. En particular, $T(0)=0$.</p><p>En bases fijadas, $T$ se representa mediante una matriz. En la base canónica, las columnas de la matriz son las imágenes de los vectores canónicos: $A=[T(e_1)\;T(e_2)\;\cdots\;T(e_n)]$.</p>
+<h3>2. Núcleo, imagen y rango-nulidad</h3><div class="cols"><div><b>Núcleo</b>$\ker T=\{v:T(v)=0\}$. Es un subespacio del dominio.</div><div><b>Imagen</b>$\operatorname{Im}T=\{T(v):v\in V\}$. Es un subespacio del codominio.</div><div><b>Rango</b>$\operatorname{rg}(T)=\dim(\operatorname{Im}T)$; coincide con el rango de la matriz asociada.</div></div>
+<div class="formula">$\displaystyle \dim(V)=\dim(\ker T)+\dim(\operatorname{Im}T).$</div>
+<p>$T$ es inyectiva si y solo si $\ker T=\{0\}$. Es sobreyectiva si $\operatorname{Im}T=W$. Para espacios de dimensión finita, dominio y codominio de igual dimensión, inyectividad equivale a sobreyectividad y a que la matriz sea invertible.</p>
+<div class="ex"><div class="lab">Ejemplo · Núcleo e imagen</div>Sea $T(x,y,z)=(x+y,y+z)$. Para hallar el núcleo resolvemos $x+y=0$, $y+z=0$. Con $y=t$, $(x,y,z)=t(-1,1,-1)$; así, $\ker T=\langle(-1,1,-1)\rangle$ y $\dim(\ker T)=1$. Por rango-nulidad, $\dim(\operatorname{Im}T)=3-1=2$, luego la imagen es $\mathbb R^2$.</div>
+<h3>3. Autovalores y autovectores</h3><p>Un vector no nulo $v$ es autovector de $A$ con autovalor $\lambda$ si $Av=\lambda v$. Para encontrarlos:</p><ol class="steps"><li>Resuelve la ecuación característica $\det(A-\lambda I)=0$ para obtener los autovalores.</li><li>Para cada $\lambda$, resuelve $(A-\lambda I)v=0$ y encuentra una base de su espacio propio.</li><li>Cuenta autovectores linealmente independientes; los autovectores asociados a autovalores distintos son independientes.</li></ol>
+<h3>4. Diagonalización</h3><p>Una matriz $n\times n$ es diagonalizable si tiene $n$ autovectores linealmente independientes. Si se colocan esos vectores como columnas de $P$ y sus autovalores correspondientes en $D$, entonces $A=PDP^{-1}$.</p>
+<div class="ex"><div class="lab">Ejemplo · Diagonalizar una matriz simétrica</div>Sea $A=\begin{pmatrix}3&1\\1&3\end{pmatrix}$. Su polinomio característico es $(3-\lambda)^2-1=(\lambda-2)(\lambda-4)$. Para $\lambda=2$ sirve $v_1=(1,-1)$; para $\lambda=4$, $v_2=(1,1)$.<div class="formula">$\displaystyle P=\begin{pmatrix}1&1\\-1&1\end{pmatrix},\quad D=\begin{pmatrix}2&0\\0&4\end{pmatrix},\quad A=PDP^{-1}.$</div>Por tanto, $A^n=PD^nP^{-1}$, con $D^n=\begin{pmatrix}2^n&0\\0&4^n\end{pmatrix}$.</div>
+<div class="tip"><span class="lab">Cuidado con el orden</span>El orden de los autovectores en las columnas de $P$ debe coincidir con el orden de los autovalores en la diagonal de $D$.</div>
+</section>
+
+<section class="tema" id="resumen" style="--c:var(--c1);--s:var(--s1)">
+<div class="band"><h2>Resumen final · fórmulas y método</h2><p>Una lista rápida para elegir el procedimiento y revisar resultados.</p></div>
+<h3>Qué método uso</h3><div class="wrap"><table><thead><tr><th>Si el ejercicio pide...</th><th>Empieza por...</th></tr></thead><tbody><tr><td>Operar, dividir o elevar complejos</td><td>Binómica para suma/producto; polar para potencias/raíces.</td></tr><tr><td>Resolver o discutir un sistema</td><td>Gauss sobre $[A|b]$; compara rangos al final.</td></tr><tr><td>Base de un subespacio por ecuaciones</td><td>Parametriza las variables libres y separa sus vectores generadores.</td></tr><tr><td>Ángulo, norma o perpendicularidad</td><td>Producto escalar; ortogonalidad equivale a producto cero.</td></tr><tr><td>Núcleo e imagen</td><td>Resuelve $Av=0$ para el núcleo; calcula rango y aplica rango-nulidad.</td></tr><tr><td>Diagonalizar o calcular $A^n$</td><td>Autovalores, espacios propios, matriz $P$ y diagonal $D$.</td></tr></tbody></table></div>
+<h3>Comprobaciones rápidas</h3><ul><li>Al dividir complejos, verifica el resultado multiplicando por el denominador original.</li><li>Al resolver un sistema, sustituye la solución en las ecuaciones iniciales.</li><li>Una base debe generar el espacio y ser linealmente independiente.</li><li>La dimensión del núcleo más la dimensión de la imagen debe igualar la del dominio.</li><li>Comprueba que $Av=\lambda v$ para cada par autovalor-autovector.</li><li>Comprueba la diagonalización calculando $PDP^{-1}$ o verificando $AP=PD$.</li></ul>
+<div class="ok">Idea central: convierte cada problema en una condición que puedas comprobar: una ecuación, un rango, una combinación lineal o un determinante.</div>
+<footer>Apuntes de repaso elaborados a partir del material facilitado. Las fórmulas se pueden imprimir desde el navegador; si MathJax está disponible, las expresiones se muestran en notación matemática.</footer>
+</section>
+</main>
+</body>
+</html>
+
+
